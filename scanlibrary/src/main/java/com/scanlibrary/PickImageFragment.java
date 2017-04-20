@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,8 +27,8 @@ import java.util.Date;
 public class PickImageFragment extends Fragment {
 
     private View view;
-    private ImageButton cameraButton;
-    private ImageButton galleryButton;
+    private ImageView cameraButton;
+    private ImageView galleryButton;
     private Uri fileUri;
     private IScanner scanner;
 
@@ -48,9 +49,9 @@ public class PickImageFragment extends Fragment {
     }
 
     private void init() {
-        cameraButton = (ImageButton) view.findViewById(R.id.cameraButton);
+        cameraButton = (ImageView) view.findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new CameraButtonClickListener());
-        galleryButton = (ImageButton) view.findViewById(R.id.selectButton);
+        galleryButton = (ImageView) view.findViewById(R.id.selectButton);
         galleryButton.setOnClickListener(new GalleryClickListener());
         if (isIntentPreferenceSet()) {
             handleIntentPreference();
